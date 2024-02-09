@@ -32,7 +32,7 @@
 	"emailFrom":"******@gmail.com",
 	"emailTo":"******@gmail.com",
 	"subject":"Titulo",
-	"text":"Texto a ser envia"
+	"text":"Texto a ser enviado"
 }
 ```
 
