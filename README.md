@@ -42,9 +42,9 @@ CREATE TABLE email (
 
 ```
 {
-	"ownerRef":"Nome de quem está enviando o e-mail",
-	"emailFrom":"******@gmail.com",
-	"emailTo":"******@gmail.com",
+	"owner_ref":"Nome de quem está enviando o e-mail",
+	"email_from":"******@gmail.com",
+	"email_to":"******@gmail.com",
 	"subject":"Titulo",
 	"text":"Texto"
 }
