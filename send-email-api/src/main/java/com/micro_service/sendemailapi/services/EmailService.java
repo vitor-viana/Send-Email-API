@@ -21,20 +21,20 @@ public class EmailService {
     private JavaMailSender emailSender;
 
     public EmailModel sendEmail (EmailModel emailModel) {
-        emailModel.setSendDateEmail(LocalDateTime.now());
+        emailModel.setSend_date_email(LocalDateTime.now());
         
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom(emailModel.getEmailFrom());
-            message.setTo(emailModel.getEmailTo());
+            message.setFrom(emailModel.getEmail_from());
+            message.setTo(emailModel.getEmail_to());
             message.setSubject(emailModel.getSubject());
             message.setText(emailModel.getText());
             emailSender.send(message);
 
-            emailModel.setStatusEmail(StatusEmail.SENT);
+            emailModel.setStatus_email(StatusEmail.SENT);
 
         } catch (MailException e) {
-            emailModel.setStatusEmail(StatusEmail.ERROR);
+            emailModel.setStatus_email(StatusEmail.ERROR);
         }
         return emailRepository.save(emailModel);
 

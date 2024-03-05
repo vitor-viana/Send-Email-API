@@ -6,13 +6,13 @@ import jakarta.validation.constraints.NotBlank;
 public class EmailDto {
 
     @NotBlank
-    private String ownerRef;
+    private String owner_ref;
     @NotBlank
     @Email
-    private String emailFrom;
+    private String email_from;
     @NotBlank
     @Email
-    private String emailTo;
+    private String email_to;
     @NotBlank
     private String subject;
     @NotBlank
@@ -34,28 +34,28 @@ public class EmailDto {
         this.subject = subject;
     }
 
-    public String getEmailTo() {
-        return emailTo;
+    public String getEmail_to() {
+        return email_to;
     }
 
-    public void setEmailTo(String emailTo) {
-        this.emailTo = emailTo;
+    public void setEmail_to(String email_to) {
+        this.email_to = email_to;
     }
 
-    public String getEmailFrom() {
-        return emailFrom;
+    public String getEmail_from() {
+        return email_from;
     }
 
-    public void setEmailFrom(String emailFrom) {
-        this.emailFrom = emailFrom;
+    public void setEmail_from(String email_from) {
+        this.email_from = email_from;
     }
 
-    public String getOwnerRef() {
-        return ownerRef;
+    public String getOwner_ref() {
+        return owner_ref;
     }
 
-    public void setOwnerRef(String ownerRef) {
-        this.ownerRef = ownerRef;
+    public void setOwner_ref(String owner_ref) {
+        this.owner_ref = owner_ref;
     }
 
 }

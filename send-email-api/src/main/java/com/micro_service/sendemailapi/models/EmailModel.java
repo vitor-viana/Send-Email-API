@@ -9,37 +9,39 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="TB-Email")
+@Table(name="email")
 public class EmailModel {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private long emailId;
-    private String ownerRef;
-    private String emailFrom;
-    private String emailTo;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="email_email_id_seq")
+    @SequenceGenerator(name="email_email_id_seq", sequenceName="email_email_id_seq", allocationSize=1)
+    private Long email_id;
+    private String owner_ref;
+    private String email_from;
+    private String email_to;
+    private LocalDateTime send_date_email;
     private String subject;
     @Column(columnDefinition="TEXT")
     private String text;
-    private LocalDateTime sendDateEmail;
-    private StatusEmail statusEmail;
+    private StatusEmail status_email;
 
-    public StatusEmail getStatusEmail() {
-        return statusEmail;
+    public StatusEmail getStatus_email() {
+        return status_email;
     }
 
-    public void setStatusEmail(StatusEmail statusEmail) {
-        this.statusEmail = statusEmail;
+    public void setStatus_email(StatusEmail status_email) {
+        this.status_email = status_email;
     }
 
-    public LocalDateTime getSendDateEmail() {
-        return sendDateEmail;
+    public LocalDateTime getSend_date_email() {
+        return send_date_email;
     }
 
-    public void setSendDateEmail(LocalDateTime sendDateEmail) {
-        this.sendDateEmail = sendDateEmail;
+    public void setSend_date_email(LocalDateTime send_date_email) {
+        this.send_date_email = send_date_email;
     }
 
     public String getText() {
@@ -58,36 +60,36 @@ public class EmailModel {
         this.subject = subject;
     }
 
-    public String getEmailTo() {
-        return emailTo;
+    public String getEmail_to() {
+        return email_to;
     }
 
-    public void setEmailTo(String emailTo) {
-        this.emailTo = emailTo;
+    public void setEmail_to(String email_to) {
+        this.email_to = email_to;
     }
 
-    public String getEmailFrom() {
-        return emailFrom;
+    public String getEmail_from() {
+        return email_from;
     }
 
-    public void setEmailFrom(String emailFrom) {
-        this.emailFrom = emailFrom;
+    public void setEmail_from(String email_from) {
+        this.email_from = email_from;
     }
 
-    public String getOwnerRef() {
-        return ownerRef;
+    public String getOwner_ref() {
+        return owner_ref;
     }
 
-    public void setOwnerRef(String ownerRef) {
-        this.ownerRef = ownerRef;
+    public void setOwner_ref(String owner_ref) {
+        this.owner_ref = owner_ref;
     }
 
-    public long getEmailId() {
-        return emailId;
+    public long getEmail_id() {
+        return email_id;
     }
 
-    public void setEmailId(long emailId) {
-        this.emailId = emailId;
+    public void setEmailId(Long email_id) {
+        this.email_id = email_id;
     }
 
 }
