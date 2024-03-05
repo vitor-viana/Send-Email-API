@@ -2,8 +2,20 @@
 
 <p>O Send Email API é um micro serviço de envio de e-mails.</p>
 
-## Modelagem do Banco de Dados
-<img src="./TB_EMAIL.png" width="150px">
+## Código SQL para a criação da tabela "email"
+```
+CREATE TABLE email (
+    email_id BIGSERIAL,
+    owner_ref VARCHAR(100) NOT NULL,
+    email_from VARCHAR(200) NOT NULL,
+    email_to VARCHAR(200) NOT NULL,
+    send_date_email TIMESTAMP NOT NULL,
+	subject VARCHAR(100) NOT NULL,
+	text TEXT NOT NULL,
+	status_email SMALLINT NOT NULL,
+	PRIMARY KEY(email_id)
+);
+```
 
 ## Requisitos do sistema
  - Java17
