@@ -10,10 +10,10 @@ CREATE TABLE email (
     email_from VARCHAR(200) NOT NULL,
     email_to VARCHAR(200) NOT NULL,
     send_date_email TIMESTAMP NOT NULL,
-	subject VARCHAR(100) NOT NULL,
-	text TEXT NOT NULL,
-	status_email SMALLINT NOT NULL,
-	PRIMARY KEY(email_id)
+    subject VARCHAR(100) NOT NULL,
+    text TEXT NOT NULL,
+    status_email SMALLINT NOT NULL,
+    PRIMARY KEY(email_id)
 );
 ```
 
